@@ -10,6 +10,7 @@ const gameReducer = (state = initState, action) => {
     case 'FETCH_GAMES':
       return {
         ...state,
+        popular: action.payload,
       };
     default:
       return state;
