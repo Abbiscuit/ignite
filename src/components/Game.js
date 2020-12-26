@@ -9,6 +9,7 @@ const Game = ({ game: { name, id, released, background_image } }) => {
   const dispatch = useDispatch();
 
   const fetchDetailHandler = () => {
+    document.body.style.overflow = 'hidden';
     dispatch(fetchGameDetail(id));
     dispatch(fetchScreenShot(id));
   };
@@ -35,8 +36,8 @@ const StyledGame = styled(motion.div)`
 
   img {
     width: 100%;
-    /* height: 40vh; */
-    height: 100%;
+    height: 40vh;
+
     object-fit: cover;
   }
 `;
