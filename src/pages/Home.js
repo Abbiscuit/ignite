@@ -14,6 +14,8 @@ const Home = () => {
   // FETCH GAMES
   useEffect(() => {
     dispatch(fetchUpcomingGames());
+    dispatch(fetchPopularGames());
+    dispatch(fetchNewGames());
   }, [dispatch]);
 
   // Get the data back
@@ -26,6 +28,20 @@ const Home = () => {
       <h2>Upcoming Games</h2>
       <Games>
         {upcoming.map(game => (
+          <Game game={game} key={game.id} />
+        ))}
+      </Games>
+
+      <h2>Popular Games</h2>
+      <Games>
+        {popular.map(game => (
+          <Game game={game} key={game.id} />
+        ))}
+      </Games>
+
+      <h2>New Games</h2>
+      <Games>
+        {newGames.map(game => (
           <Game game={game} key={game.id} />
         ))}
       </Games>
