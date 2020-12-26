@@ -9,6 +9,7 @@ import rootReducer from './reducers';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import { GlobalStyles } from './components/GlobalStyles';
+import { BrowserRouter } from 'react-router-dom';
 
 const middleware = [thunk];
 
@@ -20,8 +21,10 @@ const store = createStore(
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <GlobalStyles />
-      <App />
+      <BrowserRouter>
+        <GlobalStyles />
+        <App />
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
