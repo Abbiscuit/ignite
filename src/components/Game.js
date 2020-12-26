@@ -1,14 +1,15 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchGameDetail } from '../actions/detailAction';
+import { useDispatch } from 'react-redux';
+import { fetchGameDetail, fetchScreenShot } from '../actions/detailAction';
 
 const Game = ({ game: { name, id, released, background_image } }) => {
   const dispatch = useDispatch();
 
   const fetchDetailHandler = () => {
     dispatch(fetchGameDetail(id));
+    dispatch(fetchScreenShot(id));
   };
 
   // const state = useSelector(state => state.state)

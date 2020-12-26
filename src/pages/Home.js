@@ -1,13 +1,16 @@
-import { motion } from 'framer-motion';
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+// Style and Animation
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
+// REDUX
+import { useDispatch, useSelector } from 'react-redux';
 import {
   fetchPopularGames,
   fetchNewGames,
   fetchUpcomingGames,
 } from '../actions/gamesAction';
 import Game from '../components/Game';
+import GameDetail from '../components/GameDetail';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -23,6 +26,7 @@ const Home = () => {
 
   return (
     <GameList>
+      <GameDetail />
       <h2>Upcoming Games</h2>
       <Games>
         {upcoming.map(game => (

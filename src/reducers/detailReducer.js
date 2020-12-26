@@ -1,5 +1,6 @@
 const initialState = {
   game: {},
+  screen: {},
 };
 
 const detailReducer = (state = initialState, action) => {
@@ -8,6 +9,11 @@ const detailReducer = (state = initialState, action) => {
       return {
         ...state,
         game: action.payload,
+      };
+    case 'FETCH_SCREENSHOT':
+      return {
+        ...state,
+        screen: action.payload,
       };
     default:
       return state;
