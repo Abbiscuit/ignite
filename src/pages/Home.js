@@ -21,8 +21,6 @@ const Home = () => {
   // Get the data back
   const { popular, newGames, upcoming } = useSelector(state => state.games);
 
-  console.log(upcoming);
-
   return (
     <GameList>
       <h2>Upcoming Games</h2>
