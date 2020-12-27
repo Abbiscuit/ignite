@@ -1,10 +1,13 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
+// Components
+import Home from './pages/Home';
 
 const App = () => {
   return (
-    <div>
-      <h1>Ignite</h1>
-    </div>
+    <Route path={['/game/:id', '/']}>
+      <Home />
+    </Route>
   );
 };
 
